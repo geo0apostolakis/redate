@@ -1,7 +1,7 @@
 # redate
 
-Change the dates in a Word or PDF file and get **the same file back**: same
-fonts, same layout, every other byte untouched.
+Change the dates in a Word or PDF file and get **the same file back**, with the same
+fonts and layout and every other byte untouched.
 
 Schools, clubs and offices reuse the same letter, newsletter or invoice every
 month and only the dates change. Opening it, hunting for every date and
@@ -10,7 +10,7 @@ date in the file, shows where each one is, and writes the new one in the
 style the old one used (`15/10/2026`, `15.10.26`, `Thursday, 15 October 2026`,
 Greek month names...).
 
-**Live:** https://imerominies.vercel.app (Greek interface, `.docx`). Runs fully
+Live at https://imerominies.vercel.app (Greek interface, `.docx`). Runs fully
 in the browser; the file never leaves your device.
 
 ## How it works
