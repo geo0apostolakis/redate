@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Αλλαγή ημερομηνιών</title>
+  <meta name="description" content="Αλλάξτε τις ημερομηνίες σε ένα αρχείο Word ή PDF χωρίς να αλλάξει τίποτα άλλο. Το αρχείο ανοίγει μόνο στον υπολογιστή σας.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#F6EFF1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Μετάβαση στο περιεχόμενο</a>
+  <main id="main">
+    <header class="intro">
+      <h1>Αλλαγή ημερομηνιών σε αρχείο Word ή PDF</h1>
+      <p class="lede">Ανοίξτε το αρχείο, διαλέξτε τις νέες ημερομηνίες και κατεβάστε το ξανά. Όλα τα άλλα μένουν όπως ήταν.</p>
+      <p class="private">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M7 10V7a5 5 0 0 1 10 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="4.5" y="10" width="15" height="10.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        Το αρχείο ανοίγει μόνο στον υπολογιστή σας. Δεν στέλνεται πουθενά.
+      </p>
+    </header>
+
+    <section class="step" id="step-file" aria-labelledby="h-file">
+      <h2 id="h-file"><span class="n" aria-hidden="true">1</span>Το αρχείο</h2>
+      <label class="drop" id="drop" for="file">
+        <input type="file" id="file" accept=".docx,.pdf,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <span class="drop-title">Σύρετε εδώ το αρχείο Word (.docx) ή PDF</span>
+        <span class="drop-or">ή</span>
+        <span class="btn btn-secondary" aria-hidden="true">Επιλογή αρχείου</span>
+      </label>
+      <div class="loaded" id="loaded" hidden>
+        <div>
+          <p class="file-name" id="file-name"></p>
+          <p class="file-meta" id="file-meta"></p>
+        </div>
+        <button type="button" class="btn btn-quiet" id="change-file">Άλλο αρχείο</button>
+      </div>
+      <p class="message" id="message" role="status" aria-live="polite" hidden></p>
+    </section>
+
+    <section class="step" id="step-dates" aria-labelledby="h-dates" hidden>
+      <h2 id="h-dates"><span class="n" aria-hidden="true">2</span>Οι ημερομηνίες</h2>
+      <div class="all" id="all" hidden>
+        <label for="all-date">Ίδια ημερομηνία σε όλες</label>
+        <div class="all-row">
+          <input type="date" id="all-date">
+          <button type="button" class="btn btn-secondary" id="all-apply">Εφαρμογή σε όλες</button>
+        </div>
+      </div>
+      <ol class="rows" id="rows"></ol>
+    </section>
+
+    <section class="step" id="step-preview" aria-labelledby="h-preview" hidden>
+      <h2 id="h-preview"><span class="n" aria-hidden="true">3</span>Πώς θα φαίνεται</h2>
+      <p class="hint">Οι σελίδες με ημερομηνίες, όπως θα βγουν.</p>
+      <div class="pages" id="pages"></div>
+    </section>
+  </main>
+
+  <div class="savebar" id="savebar" hidden>
+    <div class="savebar-in">
+      <p id="summary" aria-live="polite"></p>
+      <div class="actions">
+        <button type="button" class="btn btn-primary" id="save-docx">Αποθήκευση Word</button>
+        <button type="button" class="btn btn-secondary" id="save-pdf" hidden>Κατέβασμα PDF</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
